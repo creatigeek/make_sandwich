@@ -13,10 +13,20 @@ describe "User pages" do
 
   describe "profile page" do
     let(:user) { FactoryGirl.create(:user) }
+    let!(:s1) { FactoryGirl.create(:sandwichpost, user: user, sandwich_type: "Meat-tastic", quote: "I love cookies.") }
+    let!(:s2) { FactoryGirl.create(:sandwichpost, user: user, sandwich_type: "Just the meat, no really.", quote: "Chicken SQUAWK!!") }
     before { visit user_path(user) }
 
     it { should have_selector('h1',    text: user.name) }
     it { should have_selector('title', text: user.name) }
+
+    describe "sandwichposts" do
+      it { should have_sandwich_type(s1.sandwich_type) }
+      it { should have_sandwich_type(s2.sandwich_type) }
+      it { should have_quote(s1.quote) }
+      it { should have_quote(s2.quote) }
+      it { should have_sandwich_type(user.sandwichposts.count) }
+    end
   end
 
   describe "signup" do

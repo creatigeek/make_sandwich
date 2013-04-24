@@ -8,5 +8,14 @@
       </h1>
     </section>
   </aside>
+  <div class="span8">
+    <% if @user.sandwichposts.any? %>
+      <h3>Sandwich Request History (<%= @user.sandwichposts.count %>)</h3>
+      <ol class="sandwichposts">
+        <%= render @sandwichposts %>
+      </ol>
+      <%= will_paginate @sandwichposts %>
+    <% end %>
+  </div>
 </div>
 
