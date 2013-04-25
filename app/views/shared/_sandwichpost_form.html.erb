@@ -1,15 +1,8 @@
-<%= form_for(@sandwichpost) do |f| %>
-  <%= render 'shared/error_messages', object: f.object %>
-	  <div class="form_row">
-	    <p>Sandwich Type:</p>
-	    <% [ 'Lots of meat', 'Regular', 'Vegetarian', 'Vegan', 'Paleo' ].each do |type| %>
-	      <br><%= radio_button_tag 'sandwich_type', :sandwich_type, @type == type %>
-	      <%= label_tag "type_#{type}", type.humanize %>
-	    <% end %>
-	  </div>
-  </div>
-  <div class="field2">
-    <%= f.text_area :quote, placeholder: "This is a quote" %>
-  </div>
-  <%= f.submit "Request", class: "btn btn-large btn-primary" %>
+<%= simple_form_for(@sandwichpost) do |f| %>
+	<%= render 'shared/error_messages', object: f.object %>
+	<%= f.input :sandwich_type, label: "What type of sandwich would you like to request?", :collection => ['Meaty :)~', 'Regular :)', 'Vegetarian :)', 'Vegan :-(', 'Paleo :D'], :as => :radio_buttons %>
+	
+	<iframe name="quote" width="500" height="165" frameborder="0" scrolling="no" seamless src="http://www.iheartquotes.com/api/v1/random?format=html&max_lines=4&max_characters=320&width=225&height=165">
+	</iframe>
+	<%= f.button :submit %>
 <% end %>
