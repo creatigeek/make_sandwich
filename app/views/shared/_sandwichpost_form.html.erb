@@ -1,0 +1,15 @@
+<%= form_for(@sandwichpost) do |f| %>
+  <%= render 'shared/error_messages', object: f.object %>
+	  <div class="form_row">
+	    <p>Sandwich Type:</p>
+	    <% [ 'Lots of meat', 'Regular', 'Vegetarian', 'Vegan', 'Paleo' ].each do |type| %>
+	      <br><%= radio_button_tag 'sandwich_type', :sandwich_type, @type == type %>
+	      <%= label_tag "type_#{type}", type.humanize %>
+	    <% end %>
+	  </div>
+  </div>
+  <div class="field2">
+    <%= f.text_area :quote, placeholder: "This is a quote" %>
+  </div>
+  <%= f.submit "Request", class: "btn btn-large btn-primary" %>
+<% end %>
