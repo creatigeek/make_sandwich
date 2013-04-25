@@ -4,6 +4,7 @@ class SandwichpostsController < ApplicationController
   def create
     @sandwichpost = current_user.sandwichposts.build(params[:sandwichpost])
     if @sandwichpost.save
+      SandwichpostMailer.sandwichrequest_email(current_user, @sandwichpost).deliver
       flash[:success] = "Make Sandwich Request and Inspiration Sent!"
       redirect_to root_url
     else
