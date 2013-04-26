@@ -2,19 +2,32 @@
 <html>
   <head>
     <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+    <style type="text/css">
+    body { color:#000000; font-size:14px; font-family:Verdana,Helvetica,Arial; }
+    h2 { margin-top:0; margin-bottom:8px; font-size:18px; }
+    p { margin:8px 0; }
+	blockquote.style2 {
+	  font: 14px/22px normal helvetica, sans-serif;
+	  margin-top: 10px;
+	  margin-bottom: 10px;
+	  margin-left: 50px;
+	  padding-left: 15px;
+	  border-left: 3px solid #ccc;
+	}
+    </style>
+
   </head>
   <body>
-    <h1>Dearest Sandwich Maker of Awesome,</h1>
+    <h2>Dearest Sandwich Maker of Awesome,</h2>
     <p>
-      <%= @user.name %> graciously requests your expertise and deft skills in the making of the following sandwich:<br/>
+      <em><%= @user.name %></em> graciously requests your expertise and deft skills in the making of the following sandwich:<br/>
     </p>
-    <p>
+    <h2>
       ~~~::: <%= @sandwichpost.sandwich_type %> :::~~~
-    </p>
-    <p>Thank you! (: <3 </p>
-		
-	<p> 
+    </h2>
+    <p>Thank you! (: <3 </p>		
+	<blockquote class="style2"> 
 		<%= @sandwichpost.quote %>
-	</p>
+	</blockquote>
   </body>
 </html>
