@@ -190,10 +190,15 @@ input {
 .sandwich_type {
   display: block;
 }
-.quote {
-	display: block;
-	font-style: italic;
-}
+
+blockquote.quote {
+  font: 14px/22px normal helvetica, sans-serif;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: 20px;
+  padding-left: 15px;
+  border-left: 3px solid #ccc;
+} 
 .timestamp {
   color: $grayLight;
 }
