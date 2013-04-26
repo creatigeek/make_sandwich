@@ -9,6 +9,7 @@ gem 'bootstrap-will_paginate', '0.0.6'
 gem 'typhoeus', '0.6.3'
 gem 'simple_form', '2.1.0'
 gem 'figaro', '0.6.3'
+gem 'bootswatch-rails', '0.4.0'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'

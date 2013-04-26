@@ -1,4 +1,7 @@
+@import "bootswatch/united/variables";
 @import "bootstrap";
+@import "bootstrap-responsive";
+@import "bootswatch/united/bootswatch";
 
 /* mixins, variables, etc. */
 
@@ -198,9 +201,9 @@ input {
   float: left;
   margin-right: 10px;
 }
-aside {
+body {
   textarea {
-    height: 100px;
+    height: 145px;
     margin-bottom: 5px;
   }
 }
